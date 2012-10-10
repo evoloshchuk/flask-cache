@@ -15,7 +15,6 @@ __versionfull__ = __version__
 import uuid
 import hashlib
 import inspect
-import warnings
 import exceptions
 
 from types import NoneType
