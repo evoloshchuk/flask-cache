@@ -107,25 +107,9 @@ class Cache(object):
             raise TypeError("Cache object must subclass "
                             "werkzeug.contrib.cache.BaseCache")
 
-    def get(self, *args, **kwargs):
-        "Proxy function for internal cache object."
-        return self.cache.get(*args, **kwargs)
-
-    def set(self, *args, **kwargs):
-        "Proxy function for internal cache object."
-        self.cache.set(*args, **kwargs)
-
-    def add(self, *args, **kwargs):
-        "Proxy function for internal cache object."
-        self.cache.add(*args, **kwargs)
-
-    def delete(self, *args, **kwargs):
-        "Proxy function for internal cache object."
-        self.cache.delete(*args, **kwargs)
-
-    def delete_many(self, *args, **kwargs):
-        "Proxy function for internal cache object."
-        self.cache.delete_many(*args, **kwargs)
+    def __getattr__(self, name):
+	"""Proxy to internal cache object"""
+        return getattr(self.cache, name)
 
     def cached(self, timeout=None, key_prefix='view/%s', unless=None):
         """
