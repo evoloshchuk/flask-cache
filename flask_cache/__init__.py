@@ -23,8 +23,8 @@ from types import NoneType
 from functools import wraps
 
 from werkzeug import import_string
-from werkzeug.contrib.cache import BaseCache, NullCache
-from flask import request, current_app
+from werkzeug.contrib.cache import BaseCache
+from flask import request
 from flask import g
 
 JINJA_CACHE_ATTR_NAME = '_template_fragment_cache'
