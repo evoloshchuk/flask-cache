@@ -10,9 +10,9 @@ Adds cache support to your Flask application
 from setuptools import setup
 
 setup(
-    name='Flask-Cache',
+    name='Flask-Cache-Dev',
     version='0.8.0',
-    url='http://github.com/thadeusb/flask-cache',
+    url='http://github.com/evoloshchuk/flask-cache',
     license='BSD',
     author='Thadeus Burgess',
     author_email='thadeusb@thadeusb.com',
